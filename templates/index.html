@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask POST</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>Welcome!</h1>
+            <p class="subtitle">Silakan masukkan nama kamu</p>
+
+            <form method="POST">
+                <input type="text" name="nama" placeholder="Nama lengkap..." required>
+                <button type="submit">Kirim Sekarang</button>
+            </form>
+
+            {% if nama %}
+                <div class="hasil">
+                    Halo, {{ nama }}! 👋
+                    <p>Terima kasih sudah mengisi form.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
