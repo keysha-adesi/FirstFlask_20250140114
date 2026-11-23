@@ -1,36 +1,30 @@
 
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loopy's Pink World</title>
+    <title>Flask POST</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+
     <div class="container">
         <div class="card">
-            <h1>Welcome to Loopy's World! 💗</h1>
-            <p class="subtitle">Hai! Yuk, kenalan dengan Loopy!</p>
-
-            <img src="{{ url_for('static', filename='loopy.jpg') }}"
-                 alt="Loopy Pororo" class="loopy">
-
-            <h2>Masukkan Nama Kamu</h2>
+            <h1>Welcome!</h1>
+            <p class="subtitle">Silakan masukkan nama kamu</p>
 
             <form method="POST">
-                <input type="text" name="nama"
-                       placeholder="Masukkan nama kamu..." required>
-                <button type="submit">Kirim 💕</button>
+                <input type="text" name="nama" placeholder="Nama lengkap..." required>
+                <button type="submit">Kirim Sekarang</button>
             </form>
 
             {% if nama %}
-            <div class="hasil">
-                <h2>Hai, {{ nama }}! 💗</h2>
-                <p>Semoga harimu menyenangkan bersama Loopy!</p>
-            </div>
+                <div class="hasil">
+                    Halo, {{ nama }}! 👋
+                    <p>Terima kasih sudah mengisi form.</p>
+                </div>
             {% endif %}
         </div>
     </div>
+
 </body>
 </html>
